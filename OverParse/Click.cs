@@ -287,6 +287,20 @@ namespace OverParse
                             await fileStream.FlushAsync();
                         }
                     }
+                    // Hi remon-7l, are you interesting to make other language selection? I can provide other other language skills.csv including english and chinese.
+                    // These data is working by simply replace the skills_ja.csv, so it will be quite easy to make a new language too.
+                    // Here is the link of chinese vision: https://wilsonltl.github.io/img/skill_tw_hk.csv, both english and chinese vision will base on your skills_ja.csv and doing translation.
+                    // Cheers:P - WilsonLTL
+
+                    // var content = await client.GetAsync("https://wilsonltl.github.io/img/skill_tw_hk.csv");
+                    // using (var fileStream = File.Create(@"./prop/skills_tw.csv"))
+                    // {
+                    // using (var httpStream = await content.Content.ReadAsStreamAsync())
+                    // {
+                    // httpStream.CopyTo(fileStream);
+                    // await fileStream.FlushAsync();
+                    //  }
+                    // }
                 }
             } catch
             {

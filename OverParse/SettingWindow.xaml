@@ -110,6 +110,7 @@
                             <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
                                 <RadioButton x:Name="JA" Content="Japanese" Checked="JA_Checked"/>
                                 <RadioButton x:Name="EN" Content="English" Margin="10,0,0,0" Checked="EN_Checked" />
+                                <RadioButton x:Name="TW" Content="Chinese(TW)" Margin="10,0,0,0" Checked="TW_Checked" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>

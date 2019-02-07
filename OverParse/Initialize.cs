@@ -33,7 +33,9 @@ namespace OverParse
             {
                 if (Properties.Settings.Default.Language == "ja-JP") { skills = File.ReadAllLines(@"prop/skills_ja.csv"); }
                 if (Properties.Settings.Default.Language == "en-US") { skills = File.ReadAllLines(@"prop/skills_en.csv"); }
-            } catch
+                //if (Properties.Settings.Default.Language == "zh-TW") { skills = File.ReadAllLines(@"prop/skills_tw.csv"); }
+            }
+            catch
             {
                 MessageBox.Show("skills.csvが存在しません。\n全ての最大ダメージはUnknownとなります。", "OverParse Setup", MessageBoxButton.OK, MessageBoxImage.Information);
             }
