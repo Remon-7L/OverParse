@@ -288,20 +288,20 @@ namespace OverParse
                         }
                     }
 
-                    var content = await client.GetAsync("https://wilsonltl.github.io/img/skill_eng.csv");
+                    var content2 = await client.GetAsync("https://wilsonltl.github.io/img/skill_eng.csv");
                     using (var fileStream = File.Create(@"./prop/skills_en.csv"))
                     {
-                        using (var httpStream = await content.Content.ReadAsStreamAsync())
+                        using (var httpStream = await content2.Content.ReadAsStreamAsync())
                         {
                             httpStream.CopyTo(fileStream);
                             await fileStream.FlushAsync();
                         }
                     }
 
-                    var content = await client.GetAsync("https://wilsonltl.github.io/img/skill_tw_hk.csv");
+                    var content3 = await client.GetAsync("https://wilsonltl.github.io/img/skill_tw_hk.csv");
                     using (var fileStream = File.Create(@"./prop/skills_tw.csv"))
                     {
-                    using (var httpStream = await content.Content.ReadAsStreamAsync())
+                    using (var httpStream = await content3.Content.ReadAsStreamAsync())
                     {
                     httpStream.CopyTo(fileStream);
                     await fileStream.FlushAsync();
