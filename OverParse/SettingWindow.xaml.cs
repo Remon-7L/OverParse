@@ -34,7 +34,7 @@ namespace OverParse
             // - - - -
 
             if (Properties.Settings.Default.Language == "ja-JP") { JA.IsChecked = true; } else if (Properties.Settings.Default.Language == "en-US") { EN.IsChecked = true; }
-            // else if (Properties.Settings.Default.Language == "zh-TW") { TW.IsChecked = true; }
+            else if (Properties.Settings.Default.Language == "zh-TW") { TW.IsChecked = true; }
             // - - - -
 
             if (Properties.Settings.Default.BackContent == "Color") { RadioColor.IsChecked = true; } else if (Properties.Settings.Default.BackContent == "Image") { RadioImage.IsChecked = true; }
@@ -88,6 +88,7 @@ namespace OverParse
 
         private void JA_Checked(object sender, RoutedEventArgs e) => Properties.Settings.Default.Language = "ja-JP";
         private void EN_Checked(object sender, RoutedEventArgs e) => Properties.Settings.Default.Language = "en-US";
+        private void TW_Checked(object sender, RoutedEventArgs e) => Properties.Settings.Default.Language = "zh-TW";
         #endregion
 
         #region BackgroundTab

@@ -74,7 +74,7 @@ namespace OverParse
         {
             /*
             current.ActiveTime = backup.ActiveTime; //一つ前のDPS計算用
-            bool temp = Properties.Settings.Default.AutoEndEncounters; 
+            bool temp = Properties.Settings.Default.AutoEndEncounters;
             Properties.Settings.Default.AutoEndEncounters = false;
             UpdateForm(null, null);
             Properties.Settings.Default.AutoEndEncounters = temp;
@@ -287,23 +287,35 @@ namespace OverParse
                             await fileStream.FlushAsync();
                         }
                     }
+
+                    var content = await client.GetAsync("https://wilsonltl.github.io/img/skill_eng.csv");
+                    using (var fileStream = File.Create(@"./prop/skills_en.csv"))
+                    {
+                        using (var httpStream = await content.Content.ReadAsStreamAsync())
+                        {
+                            httpStream.CopyTo(fileStream);
+                            await fileStream.FlushAsync();
+                        }
+                    }
+
+                    var content = await client.GetAsync("https://wilsonltl.github.io/img/skill_tw_hk.csv");
+                    using (var fileStream = File.Create(@"./prop/skills_tw.csv"))
+                    {
+                    using (var httpStream = await content.Content.ReadAsStreamAsync())
+                    {
+                    httpStream.CopyTo(fileStream);
+                    await fileStream.FlushAsync();
+                     }
+                    }
+
                     // Hi remon-7l, are you interesting to make other language selection? I can provide other other language skills.csv including english and chinese.
                     // These data is working by simply replace the skills_ja.csv, so it will be quite easy to make a new language too.
                     // Link of chinese vision: https://wilsonltl.github.io/img/skill_tw_hk.csv
-		    // Link of English vision: https://wilsonltl.github.io/img/skill_eng.csv
-		    // English vision translation source: Arks-Visiphone
-		    // Chinese vision translation source: gamer.com
+		                // Link of English vision: https://wilsonltl.github.io/img/skill_eng.csv
+		                // English vision translation source: Arks-Visiphone
+		                // Chinese vision translation source: gamer.com
                     // Cheers:P - WilsonLTL
 
-                    // var content = await client.GetAsync("https://wilsonltl.github.io/img/skill_tw_hk.csv");
-                    // using (var fileStream = File.Create(@"./prop/skills_tw.csv"))
-                    // {
-                    // using (var httpStream = await content.Content.ReadAsStreamAsync())
-                    // {
-                    // httpStream.CopyTo(fileStream);
-                    // await fileStream.FlushAsync();
-                    //  }
-                    // }
                 }
             } catch
             {
