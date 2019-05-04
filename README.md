@@ -7,10 +7,10 @@
 ```
 ** Since OverParse 4.0.1 released version is not same as the open source code, so we will stop support version 4 until we define all possible network vulnerability and back door **
 ** 由於OverParse 4.0.1釋出版本與開源碼並不符合, 所以我們將會停止支援 4系列版本, 直至我們找出並解決所有潛在的網絡漏洞和後門 **
+** 我會盡快令到4.0.0以上的版本可以正常運作,剷除HTTP service有關的功能以確保資料不會有任何外洩的可能,包括洩漏給我 ** 
+** I will make the version above 4.0.0 functioning as soon as possible, and remove all connections related to HTTP service to ensure that there will be no leakage of information, including leakage me **
 ** Welcome to report the bugs and contributions **
 ** 歡迎回報bug 或者作出貢獻 **
-** 我會盡快令到4.0.0以上的版本可以正常運作,HTTP service有關的連接以確保資料不會有任何外洩的可能,包括我 ** 
-** I will make the version above 4.0.0 functioning as soon as possible, and remove all connections related to HTTP service to ensure that there will be no leakage of information, including me **
 ```
 
 Warning: This tool violates the PSO2 Terms of Service. Please use caution, discretion and privacy, don't posted in ANY social media. <br >
