@@ -1,0 +1,54 @@
+﻿<Window x:Class="Ov3rD4r53.Overlay"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ov3rD4r53"
+        xmlns:properties="clr-namespace:Ov3rD4r53.Properties"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="#01000000"
+        Topmost="True"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown"
+        FontFamily="{Binding Source={x:Static properties:Settings.Default}, Path=OverlayFont}"
+        FontSize="{Binding Source={x:Static properties:Settings.Default}, Path=OverlayFontSize}"
+        Title="Ov3rD4r53" Height="{Binding Source={x:Static properties:Settings.Default}, Path=OverlayHeight}"
+        Width="{Binding Source={x:Static properties:Settings.Default}, Path=OverlayWidth}">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+            <Setter Property="Foreground" Value="{Binding Source={x:Static properties:Settings.Default}, Path=OverlayBrush,BindingGroupName=WindowForeground}" />
+        </Style>
+    </Window.Resources>
+
+    <Window.BindingGroup>
+        <BindingGroup Name="WindowForeground" NotifyOnValidationError="True" />
+    </Window.BindingGroup>
+    
+    <Border BorderBrush="#40808080" BorderThickness="1">
+        <Border.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="閉じる" InputGestureText="Alt+F4" Click="Close_Click" FontSize="12" />
+            </ContextMenu>
+        </Border.ContextMenu>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Label x:Name="Rank" Content="Initialize..." Grid.Row="0" />
+            <Label x:Name="TScore" Grid.Row="1" />
+            <Label x:Name="Damage" Grid.Row="2" />
+            <Label x:Name="Next" Grid.Row="3" />
+            <Label x:Name="DPS" Grid.Row="4" />
+            <Label x:Name="JA" Grid.Row="5" />
+        </Grid>
+    </Border>
+</Window>

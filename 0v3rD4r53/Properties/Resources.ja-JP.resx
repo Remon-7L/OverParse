@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AutoEnd" xml:space="preserve">
+    <value>自動エンカウント終了</value>
+    <comment>03</comment>
+  </data>
+  <data name="Changeinv" xml:space="preserve">
+    <value>.csv更新間隔を変更</value>
+    <comment>29</comment>
+  </data>
+  <data name="DiscardEncounter" xml:space="preserve">
+    <value>戦闘データ破棄</value>
+    <comment>02</comment>
+  </data>
+  <data name="DPSFormat" xml:space="preserve">
+    <value>DPS表示形式を変更</value>
+    <comment>27</comment>
+  </data>
+  <data name="EndEncounter" xml:space="preserve">
+    <value>エンカウント終了</value>
+    <comment>01</comment>
+  </data>
+  <data name="HideAIS" xml:space="preserve">
+    <value>A.I.S.を隠す</value>
+    <comment>20</comment>
+  </data>
+  <data name="HideDB" xml:space="preserve">
+    <value>DarkBlastを隠す</value>
+    <comment>21</comment>
+  </data>
+  <data name="HideLsw" xml:space="preserve">
+    <value>ラコニウムソードを隠す</value>
+    <comment>23</comment>
+  </data>
+  <data name="HideName" xml:space="preserve">
+    <value>他人の匿名化</value>
+    <comment>25</comment>
+  </data>
+  <data name="HideNPC" xml:space="preserve">
+    <value>エネミー/NPCを隠す</value>
+    <comment>09</comment>
+  </data>
+  <data name="HidePlayer" xml:space="preserve">
+    <value>プレイヤーを隠す</value>
+    <comment>19</comment>
+  </data>
+  <data name="HidePwp" xml:space="preserve">
+    <value>Photon weaponを隠す</value>
+    <comment>24</comment>
+  </data>
+  <data name="HideRide" xml:space="preserve">
+    <value>Ridroidを隠す</value>
+    <comment>22</comment>
+  </data>
+  <data name="NoLogs" xml:space="preserve">
+    <value>まだ記録されていません</value>
+    <comment>08</comment>
+  </data>
+  <data name="OpenLog" xml:space="preserve">
+    <value>ログフォルダーを開く</value>
+    <comment>06</comment>
+  </data>
+  <data name="RoundJA" xml:space="preserve">
+    <value>JA / Criticalの小数点以下を削除</value>
+    <comment>28</comment>
+  </data>
+  <data name="Separate" xml:space="preserve">
+    <value>分割オプション</value>
+    <comment>10</comment>
+  </data>
+  <data name="SeparateAIS" xml:space="preserve">
+    <value>A.I.S.のダメージを分けて表示</value>
+    <comment>14</comment>
+  </data>
+  <data name="SeparateDB" xml:space="preserve">
+    <value>DarkBlastのダメージを分けて表示</value>
+    <comment>15</comment>
+  </data>
+  <data name="SeparateHTF" xml:space="preserve">
+    <value>HTFを分けて表示</value>
+    <comment>12</comment>
+  </data>
+  <data name="SeparateLsw" xml:space="preserve">
+    <value>ラコニウムソードのダメージを分けて表示</value>
+    <comment>18</comment>
+  </data>
+  <data name="SeparatePwp" xml:space="preserve">
+    <value>Photon Weaponのダメージを分けて表示</value>
+    <comment>17</comment>
+  </data>
+  <data name="SeparateRide" xml:space="preserve">
+    <value>Ridroidのダメージを分けて表示</value>
+    <comment>16</comment>
+  </data>
+  <data name="SeparateZanverse" xml:space="preserve">
+    <value>ザンバースを分けて表示</value>
+    <comment>11</comment>
+  </data>
+  <data name="SessionLog" xml:space="preserve">
+    <value>セッションログ</value>
+    <comment>07</comment>
+  </data>
+  <data name="ThroughOther" xml:space="preserve">
+    <value>自分以外全て無視</value>
+    <comment>26</comment>
+  </data>
+  <data name="TimeOut" xml:space="preserve">
+    <value>タイムアウト時間の設定</value>
+    <comment>04</comment>
+  </data>
+  <data name="ToClip" xml:space="preserve">
+    <value>クリップボードへ自動コピー</value>
+    <comment>05</comment>
+  </data>
+  <data name="VSeparate" xml:space="preserve">
+    <value>個人別分割オプション</value>
+    <comment>13</comment>
+  </data>
+  <data name="AlwaysOnTop" xml:space="preserve">
+    <value>常に前面に表示</value>
+    <comment>33</comment>
+  </data>
+  <data name="AutoHide" xml:space="preserve">
+    <value>自動でウィンドゥを隠す</value>
+    <comment>34</comment>
+  </data>
+  <data name="BackOp" xml:space="preserve">
+    <value>背景透過度</value>
+    <comment>32</comment>
+  </data>
+  <data name="BanWarning" xml:space="preserve">
+    <value>このソフトウェアは、ゲームの規約を破る外部ツールです。
+公式発表にて解析ツールを使用した事が確認されたアカウントを停止する可能性があると発表しました。
+アカウントの安全性を保つ場合にはこのソフトウェアを使用しないで下さい。
+このツールの使用は自己責任です。
+
+本当に続けますか？</value>
+    <comment>L1</comment>
+  </data>
+  <data name="ChangeFont" xml:space="preserve">
+    <value>フォントを変更(試験中)</value>
+    <comment>36</comment>
+  </data>
+  <data name="SelectColumn" xml:space="preserve">
+    <value>列を選択...</value>
+    <comment>40</comment>
+  </data>
+  <data name="Highlight" xml:space="preserve">
+    <value>自分をハイライト</value>
+    <comment>42</comment>
+  </data>
+  <data name="ResizeWindow" xml:space="preserve">
+    <value>デフォルトサイズに戻す</value>
+    <comment>30</comment>
+  </data>
+  <data name="ShowGraph" xml:space="preserve">
+    <value>ダメージグラフを表示</value>
+    <comment>41</comment>
+  </data>
+  <data name="ThroughClick" xml:space="preserve">
+    <value>クリックを無効化</value>
+    <comment>35</comment>
+  </data>
+  <data name="WinOp" xml:space="preserve">
+    <value>ウィンドゥ透過度</value>
+    <comment>31</comment>
+  </data>
+  <data name="CPUDraw" xml:space="preserve">
+    <value>GPU描画を無効にする</value>
+    <comment>44</comment>
+  </data>
+  <data name="LowResources" xml:space="preserve">
+    <value>プロセス優先度を低にする</value>
+    <comment>43</comment>
+  </data>
+  <data name="Skipdll" xml:space="preserve">
+    <value>dllの更新をスキップ</value>
+    <comment>46</comment>
+  </data>
+  <data name="Updatecsv" xml:space="preserve">
+    <value>skills.csvを更新</value>
+    <comment>47</comment>
+  </data>
+  <data name="UpdateTime" xml:space="preserve">
+    <value>画面更新時のPC時刻を表示</value>
+    <comment>45</comment>
+  </data>
+  <data name="Cantclip" xml:space="preserve">
+    <value>クリップボードにデータを保存できませんでした。</value>
+    <comment>L11</comment>
+  </data>
+  <data name="Donedll" xml:space="preserve">
+    <value>セットアップ完了！
+dllプラグインがpso2_binフォルダにコピーされています。
+PSO2が既に実行されている場合は再起動する必要があります。</value>
+    <comment>L9</comment>
+  </data>
+  <data name="Installdll" xml:space="preserve">
+    <value>dllプラグインをインストールしますか？</value>
+    <comment>L7</comment>
+  </data>
+  <data name="Needdll" xml:space="preserve">
+    <value>OverParseにはdllプラグインが必要です。
+アプリケーションを終了します。</value>
+    <comment>L8</comment>
+  </data>
+  <data name="Newdll" xml:space="preserve">
+    <value>このOverParseのバージョンには、dllプラグインの新しいバージョンが含まれています。
+今すぐ更新しますか？</value>
+    <comment>L6</comment>
+  </data>
+  <data name="Noexe" xml:space="preserve">
+    <value>これは有効なpso2_binディレクトリではありません。
+pso2.exeが見つかりません。</value>
+    <comment>L2</comment>
+  </data>
+  <data name="Noinstall" xml:space="preserve">
+    <value>必要なインストールが設定されませんでした。
+アプリケーションを終了します。</value>
+    <comment>L5</comment>
+  </data>
+  <data name="Selectbin" xml:space="preserve">
+    <value>pso2_binディレクトリを選択して下さい。
+OverParseはダメージログを読み込みます。</value>
+    <comment>L3</comment>
+  </data>
+  <data name="Selectbox" xml:space="preserve">
+    <value>pso2_binフォルダを選択して下さい。
+大抵の場合はPSO2をインストールしたフォルダにあります。</value>
+    <comment>L4</comment>
+  </data>
+  <data name="Variable" xml:space="preserve">
+    <value>リストの幅を可変にする</value>
+    <comment>37</comment>
+  </data>
+  <data name="Damaged" xml:space="preserve">
+    <value>Dmgd</value>
+    <comment>UI02</comment>
+  </data>
+  <data name="VideoTime" xml:space="preserve">
+    <value>非戦闘時間をDPSの計算から除外</value>
+  </data>
+  <data name="TScore" xml:space="preserve">
+    <value>偏差値</value>
+    <comment>UI01</comment>
+  </data>
+  <data name="WriteTScore" xml:space="preserve">
+    <value>偏差値をログに出力する</value>
+  </data>
+  <data name="BanCheck" xml:space="preserve">
+    <value>はい、続けます</value>
+    <comment>L10</comment>
+  </data>
+  <data name="License1" xml:space="preserve">
+    <value>PSO2DamageDump
+- - - - - - -
+PSO2DamageDump
+https://github.com/VariantXYZ/PSO2DamageDump
+
+
+OverParse
+- - - - - - -
+OverParse
+https://github.com/TyroneSama/OverParse
+
+
+
+ColorPickerWPF / MIT License
+- - - - - - -
+ColorPickerWPF
+https://github.com/drogoganor/ColorPickerWPF
+
+Copyright (c) 2017 drogoganor
+
+https://opensource.org/licenses/MIT
+
+
+
+Google Noto Fonts / SIL Open Font License
+- - - - - - -
+Noto fonts
+https://github.com/googlei18n/noto-fonts
+
+https://www.google.com/get/noto/
+
+Google Internationalization Team
+
+https://scripts.sil.org/OFL_web
+
+
+
+.NET Framework 4.7.2  Reference Source / Microsoft Reference Source License
+- - - - - - -
+Reference Source
+https://referencesource.microsoft.com/
+
+https://referencesource.microsoft.com/license.html
+
+
+
+ScreenCapture
+- - - - - - -
+ScreenCapture
+https://github.com/Kuwayoshi/ScreenCapture
+
+
+
+Custom path of the user.config / Creative Commons Attribution-ShareAlike License
+- - - - - - -
+https://stackoverflow.com/questions/2265271/custom-path-of-the-user-config
+
+Chuck Rostance
+https://stackoverflow.com/users/810915/
+
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+
+
+TransparentImageBox
+- - - - - - -
+https://www.rainorshine.asia/2013/06/11/post2437.html
+
+https://twitter.com/surface0
+
+
+
+OverParse Icon / ICOON MONO License
+- - - - - - -
+http://icooon-mono.com/14431-%E6%9C%9B%E9%81%A0%E9%8F%A1%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A4%E3%83%A9%E3%82%B9%E3%83%883/
+
+http://icooon-mono.com/license/
+
+http://kage-design.com/
+https://twitter.com/topeconheroes
+
+
+
+MetroRadiance / MIT License
+- - - - - - -
+MetroRadiance
+https://github.com/Grabacr07/MetroRadiance
+
+http://grabacr.net/archives/480
+http://grabacr.net/archives/507
+
+Copyright (c) 2014 Manato KAMEYA
+https://twitter.com/Grabacr07
+
+https://opensource.org/licenses/MIT</value>
+  </data>
+</root>

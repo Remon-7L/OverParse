@@ -1,0 +1,56 @@
+﻿<YK:Window x:Class="Ov3rD4r53.Detalis"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ov3rD4r53"
+        xmlns:YK="clr-namespace:YKToolkit.Controls;assembly=YKToolkit.Controls"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None" AllowsTransparency="True"
+        Background="#FF404040"
+        ResizeMode="CanResizeWithGrip"
+        MouseDown="Window_MouseDown"
+        Closing="Window_Closing"
+        Loaded="Window_Loaded"
+        Title="Detalis" Height="300" Width="550">
+    <Window.Resources>
+        <Style x:Key="ExitStyle" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Marlett" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="5,2,5,2" />
+        </Style>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Label x:Name="PlayerID" FontFamily="Yu Gothic UI,Meiryo UI" Margin="2,0,0,0" />
+            <Label x:Name="PlayerName" FontFamily="Yu Gothic UI,Meiryo UI" Margin="5,0,0,0" />
+            <Label x:Name="Rate" FontFamily="Yu Gothic UI,Meiryo UI" Margin="5,0,0,0" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="0" Click="Minimize_Click" Style="{StaticResource ExitStyle}"/>
+            <Button Content="r" Click="Close_Click" Style="{StaticResource ExitStyle}"/>
+        </StackPanel>
+        <DataGrid x:Name="DatalisGrid" Grid.Row="1" BorderThickness="0" IsReadOnly="True" AutoGenerateColumns="False" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="PAName" Binding="{Binding PAName}" FontFamily="Noto Sans CJK JP DemiLight,Yu Gothic UI,Meiryo UI" />
+                <DataGridTextColumn Header="Rate" Binding="{Binding Rate}" />
+                <DataGridTextColumn Header="Dmg" CanUserSort="False" Binding="{Binding Dmg}" />
+                <DataGridTextColumn Header="JA" Binding="{Binding JA}"/>
+                <DataGridTextColumn Header="Crtcl" Binding="{Binding Crtcl}" />
+                <DataGridTextColumn Header="hits" Binding="{Binding Hit}"/>
+                <DataGridTextColumn Header="max" Binding="{Binding Max}" />
+                <DataGridTextColumn Header="avg" Binding="{Binding Avg}" />
+                <DataGridTextColumn Header="min" Binding="{Binding Min}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</YK:Window>
