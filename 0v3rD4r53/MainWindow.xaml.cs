@@ -143,7 +143,7 @@ namespace Ov3rD4r53
 
         private void CheckNewCsv(object sender, EventArgs e)
         {
-            if (!damagelogs.GetFiles().Any()) { return; }
+            if (!damagelogs.Exists || !damagelogs.GetFiles().Any()) { return; }
             FileInfo curornewcsv = damagelogs.GetFiles().Where(f => Regex.IsMatch(f.Name, @"\d+\.")).OrderByDescending(f => f.Name).FirstOrDefault();
             if (damagelogcsv != null && curornewcsv.LastWriteTimeUtc <= damagelogcsv.LastWriteTimeUtc) { return; }
             damagelogcsv = curornewcsv;

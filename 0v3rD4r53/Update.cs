@@ -310,7 +310,7 @@ namespace Ov3rD4r53
                 if (!SepZvs) { EncounterStatus.Content += $" - Zanverse : {current.totalZanverse.ToString("N0")}"; }
                 lastStatus = EncounterStatus.Content.ToString();
             }
-            else if (damagelogs.GetFiles().Any() == false)
+            else if (!damagelogs.Exists || !damagelogs.GetFiles().Any())
             {
                 EncounterIndicator.Fill = new SolidColorBrush(Color.FromArgb(255, 255, 128, 128));
                 EncounterStatus.Content = "Directory No Logs : (Re)Start PSO2, Attack Enemy  or  Failed dll plugin Install";
@@ -639,7 +639,7 @@ namespace Ov3rD4r53
             TcpClient tc = null;
             try
             {
-                tc = new TcpClient(sHost, iPort);
+                tc = new TcpClient(sHost, iPort); // TODO: Dispose this
             }
             catch (Exception ex)
             {

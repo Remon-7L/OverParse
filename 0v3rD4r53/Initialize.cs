@@ -130,22 +130,6 @@ namespace Ov3rD4r53
 
             #endregion XmlLoad
 
-
-            /*
-            try
-            {
-                string base64 = File.ReadAllText(@"prop/aes256id.txt");
-                string dec = Decrypt(base64);
-                playerid = dec.Split('\n');
-                //playerid = File.ReadAllLines("playerid.txt");
-            }
-            catch (Exception error)
-            {
-                MessageBox.Show(error.ToString());
-                playerid = new string[] { "12345678900" }; //nullだとエラーが出るので適当な値
-            }
-            */
-
         }
 
         private async Task Version_Check()
