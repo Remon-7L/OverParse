@@ -95,9 +95,12 @@ namespace Ov3rD4r53
                             }
                             break;
                         case "AIS":
-                            foreach (XmlElement val in el.ChildNodes)
+                            foreach (XmlNode val in el.ChildNodes)
                             {
-                                Sepid.AISAtkID.Add(uint.Parse(val.InnerText));
+                                if (val.NodeType != XmlNodeType.Comment)
+                                {
+                                    Sepid.AISAtkID.Add(uint.Parse(val.InnerText));
+                                }
                             }
                             break;
                         case "Ride":

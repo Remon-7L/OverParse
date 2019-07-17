@@ -147,13 +147,11 @@ namespace Ov3rD4r53
 
             // get group damage totals
             long totalReadDamage = workingList.Sum(x => x.ReadDamage);
-            long totalAllyReadDamage = workingList.Where(p => p.Type == PType.raw).Sum(x => x.ReadDamage);
 
-            long totalAVG;
-            if (workingList.Any()) { totalAVG = totalAllyReadDamage / workingList.Count(p => p.Type == PType.raw); } else { totalAVG = 1; }
+            long totalAVG = workingList.Any(p => p.Type == PType.raw) ? current.totalDamage / workingList.Count(p => p.Type == PType.raw) : 1;
 
             // dps calcs!
-            Parallel.ForEach(workingList, p =>
+            foreach (Player p in workingList)
             {
                 p.PercentReadDPS = p.ReadDamage / (double)totalReadDamage * 100;
                 p.AllyPct = p.AllyDamage / (double)current.totalAllyDamage * 100;
@@ -162,8 +160,11 @@ namespace Ov3rD4r53
                 p.PwpPct = p.PwpDamage / (double)current.totalPwpDamage * 100;
                 p.AisPct = p.AisDamage / (double)current.totalAisDamage * 100;
                 p.RidePct = p.RideDamage / (double)current.totalRideDamage * 100;
-                p.TScore = Math.Pow(Math.Abs(p.ReadDamage - totalAVG), 2);
-            });
+                if (p.Type == PType.raw)
+                {
+                    p.TScore = Math.Abs(p.Damage - totalAVG) * Math.Abs(p.Damage - totalAVG);
+                }
+            }
 
             //Hensa
             if (workingList.Any(p => p.Type == PType.raw))
@@ -171,11 +172,10 @@ namespace Ov3rD4r53
                 current.totalSD = Math.Sqrt(workingList.Where(p => p.Type == PType.raw).Average(x => x.TScore));
                 foreach (Player c in workingList)
                 {
-                    double temp = Math.Abs(c.ReadDamage - totalAVG) * 10 / current.totalSD;
+                    double temp = Math.Abs(c.Damage - totalAVG) * 10 / current.totalSD;
                     if (c.ReadDamage < totalAVG) { c.TScore = 50.0 - temp; }
                     else if (totalAVG < c.ReadDamage) { c.TScore = 50.0 + temp; }
-                    else if (totalAVG == c.ReadDamage) { c.TScore = 50.00; }
-                    else { c.TScore = 00.00; }
+                    else { c.TScore = 50.00; }
                 }
             }
 
@@ -473,22 +473,23 @@ namespace Ov3rD4r53
         {
             if (current.players.Count == 0) { return null; }
             if (current.ActiveTime == 0) { current.ActiveTime = 1; }
-            string timer = TimeSpan.FromSeconds(current.ActiveTime).ToString(@"mm\:ss");
-            string log = DateTime.Now.ToString("F") + " | " + timer + " | TotalDamage : " + current.totalDamage.ToString("N0") + " | TotalDPS : " + current.totalDPS.ToString("N0") + Environment.NewLine + Environment.NewLine;
+            string timer = TimeSpan.FromSeconds(current.ActiveTime).ToString(@"hh\:mm\:ss");
+            StringBuilder log = new StringBuilder();
+            _ = log.Append($"{DateTime.Now.ToString("F")} | {timer} | TotalDamage : { current.totalDamage.ToString("N0")} | TotalDPS : {current.totalDPS.ToString("N0")}").AppendLine().AppendLine();
 
             foreach (Player c in workingList)
             {
                 if (Properties.Settings.Default.IsWriteTS)
                 {
-                    log += $"{c.Name} | {c.RatioPercent}% | 偏差値:{c.ReadTScore} | {c.ReadDamage.ToString("N0")} dmg | {c.Writedmgd} dmgd | {c.DPS} DPS | JA: {c.WJAPercent}% | Critical: {c.WCRIPercent}% | Max: {c.WriteMaxdmg} ({c.MaxHit})" + Environment.NewLine;
+                    _ = log.Append($"{c.Name} | {c.RatioPercent}% | 偏差値:{c.ReadTScore} | {c.ReadDamage.ToString("N0")} dmg | {c.Writedmgd} dmgd | {c.DPS} DPS | JA: {c.WJAPercent}% | Critical: {c.WCRIPercent}% | Max: {c.WriteMaxdmg} ({c.MaxHit})").AppendLine();
                 }
                 else
                 {
-                    log += $"{c.Name} | {c.RatioPercent}% | {c.ReadDamage.ToString("N0")} dmg | {c.Writedmgd} dmgd | {c.DPS} DPS | JA: {c.WJAPercent}% | Critical: {c.WCRIPercent}% | Max: {c.WriteMaxdmg} ({c.MaxHit})" + Environment.NewLine;
+                    _ = log.Append($"{c.Name} | {c.RatioPercent}% | {c.ReadDamage.ToString("N0")} dmg | {c.Writedmgd} dmgd | {c.DPS} DPS | JA: {c.WJAPercent}% | Critical: {c.WCRIPercent}% | Max: {c.WriteMaxdmg} ({c.MaxHit})").AppendLine();
                 }
             }
 
-            log += Environment.NewLine + Environment.NewLine;
+            _ = log.AppendLine().AppendLine();
 
             foreach (Player c in workingList)
             {
@@ -498,7 +499,7 @@ namespace Ov3rD4r53
                 List<Tuple<string, List<int>, List<bool>, List<bool>>> attackData = new List<Tuple<string, List<int>, List<bool>, List<bool>>>();
 
 
-                log += $"[ {c.Name} - {c.RatioPercent}% - {c.ReadDamage.ToString("N0")} dmg ]" + Environment.NewLine + Environment.NewLine;
+                _ = log.AppendLine($"[ {c.Name} - {c.RatioPercent}% - {c.ReadDamage.ToString("N0")} dmg ]").AppendLine().AppendLine();
 
                 if (SepZvs && c.IsZanverse)
                 {
@@ -567,24 +568,22 @@ namespace Ov3rD4r53
                     ja = exja.Any() ? (exja.Average() * 100).ToString("N2") : "NaN";
                     cri = excri.Any() ? (excri.Average() * 100).ToString("N2") : "NaN";
 
-                    log += $"{paddedPercent}%	| {i.Item1} - {sum} dmg";
-                    log += $" - JA : {ja}% - Critical : {cri}%";
-                    log += Environment.NewLine;
-                    log += $"	|   {hits} hits - {min} min, {avg} avg, {max} max" + Environment.NewLine;
+                    _ = log.Append($"{paddedPercent}%	| {i.Item1} - {sum} dmg - JA : {ja}% - Critical : {cri}%").AppendLine();
+                    _ = log.Append($"	|   {hits} hits - {min} min, {avg} avg, {max} max").AppendLine();
                 }
 
-                log += Environment.NewLine;
+                _ = log.AppendLine();
             }
 
 
-            log += "Instance IDs: " + string.Join(", ", current.instances.ToArray());
+            _ = log.Append("Instance IDs: " + string.Join(", ", current.instances.ToArray()));
 
             DateTime thisDate = DateTime.Now;
             string directory = string.Format("{0:yyyy-MM-dd}", DateTime.Now);
             Directory.CreateDirectory($"Logs/{directory}");
             string datetime = string.Format("{0:yyyy-MM-dd_HH-mm-ss}", DateTime.Now);
             string filename = $"Logs/{directory}/OverParse - {datetime}.txt";
-            File.WriteAllText(filename, log);
+            File.WriteAllText(filename, log.ToString());
 
             return filename;
         }

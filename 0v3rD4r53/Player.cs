@@ -59,15 +59,7 @@ namespace Ov3rD4r53
         public uint MaxHitID, AllyMaxID, DBMaxID, LswMaxID, PwpMaxID, AisMaxID, RideMaxID;
         public int Maxdmg, AllyMaxdmg, DBMaxdmg, LswMaxdmg, PwpMaxdmg, AisMaxdmg, RideMaxdmg;
 
-        public string DisplayName
-        {
-            get
-            {
-                //if (ID == "13470610") { return "Dev|" + Name; }
-                //if (!Properties.Settings.Default.UserHighlight) { return "Anonymous"; }
-                return Name;
-            }
-        }
+        public string DisplayName => Name;
 
         public string RatioPercent => $"{PercentReadDPS:00.00}";
         public string ReadTScore => Type == PType.raw ? $"{TScore:00.00}" : "--";
