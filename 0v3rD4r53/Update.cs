@@ -469,7 +469,7 @@ namespace Ov3rD4r53
         /// Output Log
         /// </summary>
         /// <returns>filename</returns>
-        public string WriteLog() // TODO: Replace StringBuilder 
+        public string WriteLog()
         {
             if (current.players.Count == 0) { return null; }
             if (current.ActiveTime == 0) { current.ActiveTime = 1; }

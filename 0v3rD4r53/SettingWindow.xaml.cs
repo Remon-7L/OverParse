@@ -13,8 +13,6 @@ using System.Windows.Media.Imaging;
 
 namespace Ov3rD4r53
 {
-    // TODO: Add zh-TWHK lang
-
     /// <summary>
     /// SettingWindow.xaml の相互作用ロジック
     /// </summary>
@@ -41,9 +39,10 @@ namespace Ov3rD4r53
             IP.Text = Properties.Settings.Default.BouyomiIP;
             FontSizeBox.Content = Properties.Settings.Default.FontSize.ToString("N1");
 
-            // - - - -
-
-            if (Properties.Settings.Default.Language == "ja-JP") { JA.IsChecked = true; } else if (Properties.Settings.Default.Language == "en-US") { EN.IsChecked = true; }
+            // - - - - LoadUI
+            if (Properties.Settings.Default.Language == "ja-JP") { JA.IsChecked = true; }
+            else if (Properties.Settings.Default.Language == "zh-TW") { TWHK.IsChecked = true; }
+            else if (Properties.Settings.Default.Language == "en-US") { EN.IsChecked = true; }
 
             // - - - -
 
@@ -110,6 +109,7 @@ namespace Ov3rD4r53
 
         private void JA_Checked(object sender, RoutedEventArgs e) => Properties.Settings.Default.Language = "ja-JP";
         private void EN_Checked(object sender, RoutedEventArgs e) => Properties.Settings.Default.Language = "en-US";
+        private void TWHK_Checked(object sender, RoutedEventArgs e) => Properties.Settings.Default.Language = "zh-TW";
         #endregion
 
         #region BackgroundTab

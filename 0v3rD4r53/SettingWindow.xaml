@@ -36,11 +36,13 @@
             <Setter Property="IsHitTestVisible" Value="False" />
         </Style>
 
+        <!--
         <Style TargetType="Label">
             <Setter Property="Padding" Value="0" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="FontSize" Value="14" />
         </Style>
+        -->
 
     </Window.Resources>
 
@@ -71,15 +73,16 @@
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
-                        <StackPanel Grid.Column="1" >
-                            <Label Content="サイズ" Margin="10,10,0,0" />
+                        <StackPanel Grid.Column="1" Margin="10" >
+                            <Label Content="サイズ"/>
                             <Slider x:Name="FontSizeSlider" Value="{Binding Source={x:Static properties:Settings.Default},Path=FontSize}" ValueChanged="FontSize_ValueChanged" Width="250" Minimum="8.0" Maximum="24.0" TickFrequency="2" TickPlacement="BottomRight"/>
                             <Label x:Name="FontSizeBox" Content="{Binding Value,ElementName=FontSize}" HorizontalContentAlignment="Center" Foreground="White" />
 
                             <Label Content="Language(After Restart Apply)" Padding="10,10,0,0" />
-                            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                            <StackPanel Margin="10,0,0,0">
                                 <RadioButton x:Name="JA" Content="Japanese" Checked="JA_Checked"/>
-                                <RadioButton x:Name="EN" Content="English" Margin="10,0,0,0" Checked="EN_Checked" />
+                                <RadioButton x:Name="TWHK"  Content="Chinese(TW/HK)" Checked="TWHK_Checked" />
+                                <RadioButton x:Name="EN" Content="English" Checked="EN_Checked" />
                             </StackPanel>
                         </StackPanel>
                     </Grid>
